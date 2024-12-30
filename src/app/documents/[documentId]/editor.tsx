@@ -7,10 +7,12 @@ import TableCell from '@tiptap/extension-table-cell';
 import TableHeader from '@tiptap/extension-table-header';
 import TableRow from '@tiptap/extension-table-row';
 import Image from '@tiptap/extension-image';
+import { Color } from '@tiptap/extension-color';
+import Highlight from '@tiptap/extension-highlight';
 import ImageResize from 'tiptap-extension-resize-image';
-import Underline from '@tiptap/extension-underline'
-import FontFamily from '@tiptap/extension-font-family'
-import TextStyle from '@tiptap/extension-text-style'
+import Underline from '@tiptap/extension-underline';
+import FontFamily from '@tiptap/extension-font-family';
+import TextStyle from '@tiptap/extension-text-style';
 import { useEditor, EditorContent } from '@tiptap/react';
 import { useEditorStore } from '@/store/use-editor-store';
 
@@ -64,7 +66,11 @@ const Editor = () => {
       ImageResize,
       Underline,
       FontFamily,
-      TextStyle
+      TextStyle,
+      Color,
+      Highlight.configure({
+        multicolor: true,
+      }),
     ],
     content: `
     <table>
