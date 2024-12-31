@@ -13,7 +13,8 @@ import ImageResize from 'tiptap-extension-resize-image';
 import Underline from '@tiptap/extension-underline';
 import FontFamily from '@tiptap/extension-font-family';
 import TextStyle from '@tiptap/extension-text-style';
-import Link from '@tiptap/extension-link'
+import Link from '@tiptap/extension-link';
+import TextAlign from '@tiptap/extension-text-align';
 import { useEditor, EditorContent } from '@tiptap/react';
 import { useEditorStore } from '@/store/use-editor-store';
 
@@ -76,6 +77,9 @@ const Editor = () => {
         openOnClick: false,
         autolink: true,
         defaultProtocol: 'https:',
+      }),
+      TextAlign.configure({
+        types: ['heading', 'paragraph'],
       }),
     ],
     content: `
