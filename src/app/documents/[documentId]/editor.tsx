@@ -20,9 +20,12 @@ import { useEditorStore } from '@/store/use-editor-store';
 import { FontSizeExtension } from '@/app/extensions/font-size';
 import { LineHeightExtension } from '@/app/extensions/line-height';
 
+import { Ruler } from './ruler';
+
 const Editor = () => {
   const { setEditor } = useEditorStore();
   const editor = useEditor({
+    immediatelyRender: false,
     onCreate({ editor }) {
       setEditor(editor);
     },
@@ -92,6 +95,7 @@ const Editor = () => {
   });
   return (
     <div className="size-full overflow-auto bg-[#F9FbFD] px-4 print:p-0 print:bg-white print:overflow-visible">
+      <Ruler></Ruler>
       <div className="min-w-max flex justify-center w-[816px] py-4 print:py-0 mx-auto print:w-full print:min-w-0">
         <EditorContent className="" editor={editor} />
       </div>
