@@ -91,7 +91,6 @@ const Editor = () => {
         types: ['paragraph', 'heading'],
       }),
     ],
-    content: ``,
   });
   return (
     <div className="size-full overflow-auto bg-[#F9FbFD] px-4 print:p-0 print:bg-white print:overflow-visible">
